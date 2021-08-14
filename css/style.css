@@ -1,0 +1,15 @@
+.inputContainer form{
+    display: table-caption;
+    text-align: center;
+}
+
+.inputContainer{
+    border: 0.3rem solid black;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+.containerGeneral{
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
