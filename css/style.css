@@ -1,15 +1,60 @@
-.inputContainer form{
-    display: table-caption;
-    text-align: center;
+.eFormulario{
+    border: 0.2rem solid black ;
+    width: 30%;
+    padding: 1.5rem;
 }
 
-.inputContainer{
-    border: 0.3rem solid black;
-    border-radius: 0.5rem;
-    padding: 1rem;
+.eDatos label{
+    padding-left: 0;
+    margin-top: 1rem;
 }
-.containerGeneral{
+
+.ePrecio button{
+    margin-top: 1.5rem;
+    width: 30%;
+}
+
+.eDatos input{
+    width: 50%;
+    margin-top: 0.5rem;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.eFormulario button{
     display: flex;
     justify-content: center;
-    margin-top: 5vh;
 }
+
+.btn-Cargar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-Cargar button{
+    border-radius: 10px;
+    background: chocolate;
+}
+
+/**/
+input[type=number]::-webkit-outer-spin-button,
+
+input[type=number]::-webkit-inner-spin-button {
+
+    -webkit-appearance: none;
+
+    margin: 0;
+
+}
+
+ 
+
+input[type=number] {
+
+    -moz-appearance:textfield;
+
+}
+/**/
