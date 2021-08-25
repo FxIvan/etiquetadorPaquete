@@ -1,5 +1,13 @@
 let datoPaquetes=[]
 
+let pesoPaquete = document.getElementById('pesoPaquete').value
+let nPaquete = document.getElementById('nPaquete').value
+let distancia = document.getElementById('distancia').value
+let titular = document.getElementById('titular').value
+let password = document.getElementById('password').value
+
+
+
 function cargaPaquete() {
 
     let pesoPaquete = document.getElementById('pesoPaquete').value
@@ -39,12 +47,7 @@ function cargaPaquete() {
     let parseDistancia = parseFloat(distancia)
     let parseTitular = titular.toUpperCase()
 
-    function Paquete(parsePeso,parseNumero,parseDistancia,parseTitular){
-        this.parsePeso = parsePeso,
-        this.parseNumero = parseNumero,
-        this.parseDistancia = parseDistancia,
-        this.parseTitular = parseTitular
-    }
+/**Aca estaba la funcion Paquete **/
 
     datoPaquetes.push(new Paquete(parsePeso,parseNumero,parseDistancia,parseTitular))
     console.log(datoPaquetes)
@@ -52,6 +55,12 @@ function cargaPaquete() {
     /*---------------------------------------- */
 
 }
+    function Paquete(parsePeso,parseNumero,parseDistancia,parseTitular){
+        this.parsePeso = parsePeso,
+        this.parseNumero = parseNumero,
+        this.parseDistancia = parseDistancia,
+        this.parseTitular = parseTitular
+    }
 
 function distanciaKm(distancia, tarifa1) {
     let resultadoParcial = distancia * 15
@@ -90,6 +99,13 @@ buscarPaquete=()=>{
     for(const paquetes of listaPaquete){
         if(paquetes.id == parseNumero){
             alert("Este paquete ya se encuentra \n cargada en la base de datos")
+            let contenedor = document.createElement('div')
+
+            contenedor.innerHTML=`<p>Numero de Paquete: ${paquetes.id}</p>
+                              <p>Direccion : ${paquetes.direccion}</p>
+                              <p>Numero: ${paquetes.numero}</p>`
+            document.body.appendChild(contenedor)
+            contenedor.classList.add("contenedorMuestraPaquete")
         }
     }
 
