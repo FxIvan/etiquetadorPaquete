@@ -60,5 +60,6 @@ input[type=number] {
 /**/
 
 .contenedorMuestraPaquete{
-
+   text-align: center;
+   margin-top: 2rem;
 }

@@ -38,19 +38,26 @@ function cargaPaquete() {
     if (password == "123") {
         if (nPaquete.length == 4) {
             switch (pesoPaquete) {
-                case "2":
+                case '0':
+                case '1':
+                case '2':
                     distanciaKm(distancia, tarifa1)
                     break;
-                case "5":
+                case '3':
+                case '4':
+                case '5':
                     distanciaKm(distancia, tarifa2)
                     break;
-                case "10":
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                case '10':
                     distanciaKm(distancia, tarifa3)
                     break;
-
                 default:
-                    alert("Lo sentimos solo hacemos envios de hasta 10KG")
-                    break;
+                    alert('Solo hacemos envios de hasta 10KG')
+
             }
         }
     }
@@ -60,19 +67,27 @@ function cargaPaquete() {
     let parsePeso = parseFloat(pesoPaquete)
     let parseNumero = parseFloat(nPaquete)
     let parseDistancia = parseFloat(distancia)
-    let parseDireccion =  direccion.toUpperCase()
+    let parseDireccion = direccion.toUpperCase()
     let parseTitular = titular.toUpperCase()
 
     /**Aca estaba la funcion Paquete **/
 
-    datoPaquetes.push(new Paquete(parsePeso, parseNumero, parseDistancia, parseTitular,parseDireccion))
-    console.log(datoPaquetes)
+    datoPaquetes.push(new Paquete(parsePeso, parseNumero, parseDistancia, parseTitular, parseDireccion))
+
+    localStorage.setItem("datosPaquetes", JSON.stringify(datoPaquetes))
+
+    let datoGuardado = localStorage.getItem("datosPaquetes")
+
+    let parseDatoGuardado = JSON.parse(datoGuardado)
+
+    console.log(parseDatoGuardado['parseTitular'])
+
 
     /*---------------------------------------- */
 
 }
 
-function Paquete(parsePeso, parseNumero, parseDistancia, parseTitular,parseDireccion) {
+function Paquete(parsePeso, parseNumero, parseDistancia, parseTitular, parseDireccion) {
     this.parsePeso = parsePeso,
         this.parseNumero = parseNumero,
         this.parseDistancia = parseDistancia,
@@ -123,6 +138,7 @@ buscarPaquete = () => {
                               <p>Numero: ${paquetes.numero}</p>`
             document.body.appendChild(contenedor)
             contenedor.classList.add("contenedorMuestraPaquete")
+
         }
     }
 
