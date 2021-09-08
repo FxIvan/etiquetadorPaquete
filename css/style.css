@@ -63,3 +63,20 @@ input[type=number] {
    text-align: center;
    margin-top: 2rem;
 }
+
+/* Modo Dark o Ligth*/
+
+.dark{
+    background-color: #222;
+    color: #e6e6e6
+}
+
+.mode{
+    margin: 2rem 0rem 0rem 2rem;
+}
+.mode p{
+    border: 3px solid rgb(208, 75, 75);
+    padding: 0.2rem;
+    border-radius: 10px;
+    display: inline;
+}
